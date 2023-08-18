@@ -73,7 +73,7 @@ const TopChartCarousel = () => {
             >
                 {thumbSlides.map((thumb, index) => (
                     <SwiperSlide key={index}>
-                        <img src={thumb} alt={`Thumb ${index}`} />
+                        <Image src={thumb} alt={`Thumb ${index}`} width={10} height={10} />
                     </SwiperSlide>
                 ))}
             </Swiper>
