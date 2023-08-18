@@ -1,8 +1,24 @@
+import Navbar from '@/container/Navbar/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Montserrat, Open_Sans } from 'next/font/google'
+import Footer from '@/container/Footer/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Montserrat({ subsets: ['latin'] })
+// const sans = Open_Sans({ subsets: ['latin'] })
+
+const inter = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mont',
+})
+
+const sans = Open_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-osans',
+})
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +32,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable} ${sans.variable}`}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
